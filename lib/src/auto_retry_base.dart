@@ -58,7 +58,7 @@ class AutoRetry implements Transformer {
   /// bot.start();
   /// ```
   ///
-  /// - [maxDelay]: The maximum duration to wait before retrying a request. Default is 3 seconds.
+  /// - [maxDelay]: The maximum duration after which we actually abandon further retries.
   /// - [maxRetryAttempts]: The maximum number of retry attempts for a failed request. Default is 3 attempts.
   /// - [rethrowInternalServerErrors]: If `true`, internal server errors will not be retried. Default is `false`.
   /// - [enableLogs]: If `true`, retry attempts will be logged to the console. Default is `false`.
