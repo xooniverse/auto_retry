@@ -1,3 +1,7 @@
+# 1.0.3
+
+- Documentation fix
+
 # 1.0.2
 
 - Throw once `retryAfter` exceeds the `maxDelay` duration
