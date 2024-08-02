@@ -7,8 +7,7 @@ import 'package:televerse/televerse.dart';
 /// requests after specified intervals, making it easier to manage transient
 /// failures without manually implementing retry logic.
 class AutoRetry implements Transformer {
-  /// The maximum duration to wait before retrying a request, based on the
-  /// `retry_after` parameter.
+  /// The maximum duration after which we can actually abandon further retries.
   ///
   /// If the `retry_after` value exceeds this threshold, the error will be
   /// passed on, hence failing the request. This is useful if you don't want
@@ -113,8 +112,13 @@ class AutoRetry implements Transformer {
 
           // Get the retry after parameter, yeah, we're going for it
           final retryAfter = e.parameters?.retryAfter;
-          if (retryAfter is int &&
-              retryAfter <= (maxDelay?.inSeconds ?? double.infinity.toInt())) {
+          final max = (maxDelay?.inSeconds ?? double.infinity.toInt());
+
+          if (retryAfter is int && retryAfter > max) {
+            rethrow;
+          }
+
+          if (retryAfter is int && retryAfter <= max) {
             _debugLog(
               "Hit rate limit, will retry '$method' after $retryAfter seconds",
             );

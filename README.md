@@ -64,7 +64,7 @@ void main(List<String> args) async {
 
 The `AutoRetryOptions` class allows you to configure the behavior of the plugin:
 
-- **maxDelaySeconds**: The maximum number of seconds to wait before retrying a request. Default is 3 seconds.
+- **maxDelay**: The maximum duration after which we can actually abandon further retries.
 - **maxRetryAttempts**: The maximum number of retry attempts for a failed request. Default is 3 attempts.
 - **rethrowInternalServerErrors**: If true, internal server errors (status code 500 and above) will not be retried and will be rethrown immediately. Default is false.
 - **enableLogs**: If true, logs will be printed to the console for each retry attempt. Default is false.
