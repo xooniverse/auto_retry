@@ -1,7 +1,7 @@
 
 ![Pub Version](https://img.shields.io/pub/v/auto_retry)
 ![GitHub Issues](https://img.shields.io/github/issues/xooniverse/auto_retry)
-![GitHub Stars](https://img.shields.io/github/stars/xooniverse/auto_retry?style=social)
+![GitHub Stars](https://img.shields.io/github/stars/xooniverse/auto_retry)
 
 # AutoRetry Plugin for Televerse
 
