@@ -1,3 +1,7 @@
+# 1.0.4
+
+- Further documentation fix :)
+
 # 1.0.3
 
 - Documentation fix

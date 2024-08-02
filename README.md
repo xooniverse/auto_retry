@@ -13,7 +13,7 @@ Add the plugin to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  auto_retry: ^1.0.0
+  auto_retry: any
 ```
 
 Then, run:
