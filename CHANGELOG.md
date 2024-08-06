@@ -1,3 +1,8 @@
+# 1.0.5
+
+- Updated SDK constraints
+- Added library documentation
+
 # 1.0.4
 
 - Further documentation fix :)
