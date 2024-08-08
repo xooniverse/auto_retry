@@ -1,3 +1,7 @@
+# 1.0.6
+
+- Just ran `dart format .`
+
 # 1.0.5
 
 - Updated SDK constraints
