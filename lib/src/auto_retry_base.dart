@@ -102,6 +102,8 @@ class AutoRetry implements Transformer {
             rethrow;
           }
 
+          _debugLog("[Exception]: ${e.code} | ${e.description}");
+
           // If it is a server error and rethrowInternalServerErrors is true, rethrow the exception
           if (e.isServerExeption && rethrowInternalServerErrors) {
             _debugLog(
