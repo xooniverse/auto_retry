@@ -1,5 +1,9 @@
 # 1.0.7
 
+- Enable logs would tell us what went wrong.
+
+# 1.0.7
+
 - Removed Infinity to `int` conversion
 
 # 1.0.6
