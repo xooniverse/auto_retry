@@ -1,3 +1,7 @@
+# 1.0.7
+
+- Removed Infinity to `int` conversion
+
 # 1.0.6
 
 - Just ran `dart format .`

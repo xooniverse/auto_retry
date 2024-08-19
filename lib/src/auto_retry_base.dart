@@ -112,7 +112,7 @@ class AutoRetry implements Transformer {
 
           // Get the retry after parameter, yeah, we're going for it
           final retryAfter = e.parameters?.retryAfter;
-          final max = (maxDelay?.inSeconds ?? double.infinity.toInt());
+          final max = (maxDelay?.inSeconds ?? double.infinity);
 
           if (retryAfter is int && retryAfter > max) {
             rethrow;
