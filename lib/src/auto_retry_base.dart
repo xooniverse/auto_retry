@@ -104,6 +104,13 @@ class AutoRetry implements Transformer {
 
           _debugLog("[Exception]: ${e.code} | ${e.description}");
 
+          if (e.code == 400) {
+            _debugLog(
+              "Can't deal with Bad Request errors. Please make sure the payloads are correct.",
+            );
+            rethrow;
+          }
+
           // If it is a server error and rethrowInternalServerErrors is true, rethrow the exception
           if (e.isServerExeption && rethrowInternalServerErrors) {
             _debugLog(

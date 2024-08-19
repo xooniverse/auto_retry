@@ -1,4 +1,8 @@
-# 1.0.7
+# 1.0.9
+
+- We don't mess around the `Bad Request` issues.
+
+# 1.0.8
 
 - Enable logs would tell us what went wrong.
 
