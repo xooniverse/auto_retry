@@ -78,9 +78,9 @@ class AutoRetry implements Transformer {
   @override
   Future<Map<String, dynamic>> transform(
     APICaller call,
-    APIMethod method,
-    Payload payload,
-  ) async {
+    APIMethod method, [
+    Payload? payload,
+  ]) async {
     int remainingAttempts = maxRetryAttempts;
     int nextDelay = _initialDelay;
 
@@ -102,7 +102,7 @@ class AutoRetry implements Transformer {
             rethrow;
           }
 
-          _debugLog("[Exception]: ${e.code} | ${e.description}");
+          _debugLog("Caught ${e.code} | ${e.description}");
 
           if (e.code == 400) {
             _debugLog(

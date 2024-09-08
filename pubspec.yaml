@@ -1,6 +1,6 @@
 name: auto_retry
 description: The AutoRetry plugin for Televerse automatically retries failed API requests, handling rate limits and server errors to improve your bot's reliability and uptime.
-version: 1.0.9
+version: 1.1.0
 repository: https://github.com/xooniverse/auto_retry
 homepage: https://televerse.xooniverse.com
 
@@ -8,7 +8,7 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  televerse: ^1.23.0
+  televerse: ^1.26.0
 
 dev_dependencies:
   lints: ^3.0.0

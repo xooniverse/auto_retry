@@ -1,3 +1,7 @@
+# 1.1.0
+
+- New Transformer definition
+
 # 1.0.9
 
 - We don't mess around the `Bad Request` issues.
