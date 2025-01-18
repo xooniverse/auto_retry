@@ -1,3 +1,7 @@
+# 1.1.2
+
+- Updated Televerse version
+
 # 1.1.1
 
 - Updated Televerse version
