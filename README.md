@@ -1,4 +1,3 @@
-
 ![Pub Version](https://img.shields.io/pub/v/auto_retry)
 ![GitHub Issues](https://img.shields.io/github/issues/xooniverse/auto_retry)
 ![GitHub Stars](https://img.shields.io/github/stars/xooniverse/auto_retry)
@@ -13,7 +12,7 @@ Add the plugin to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  auto_retry: any
+  auto_retry: <latest>
 ```
 
 Then, run:
@@ -24,7 +23,7 @@ dart pub get
 
 ## Usage
 
-To use the `AutoRetry` plugin, you simply need to attach it to your bot with the desired options.
+To use the `AutoRetry` plugin, you simply need to install it to your bot with the desired options.
 
 ### Example
 
@@ -34,18 +33,15 @@ import 'package:televerse/televerse.dart';
 import 'package:auto_retry/auto_retry.dart';
 
 void main(List<String> args) async {
-  // Create aan API instance or a Bot Instance passing the bot token
+  // Create a Bot instance passing the bot token
   final bot = Bot(
     Platform.environment["BOT_TOKEN"]!,
   );
 
-  // Take an instance of the Auto Retry, feel free to check the different options
-  const autoRetry = AutoRetry(
+  // Install the AutoRetry plugin - that's it. You're all set.
+  bot.plugin(AutoRetryPlugin(
     enableLogs: true,
-  );
-
-  // Attach the auto retry plugin to the Bot - that's it. You're all set.
-  bot.use(autoRetry);
+  ));
 
   bot.command("start", (ctx) {
     // Just spam the Bot API Server (and hit some limits)
@@ -62,7 +58,7 @@ void main(List<String> args) async {
 
 ### Options
 
-The `AutoRetryOptions` class allows you to configure the behavior of the plugin:
+The `AutoRetryPlugin` constructor allows you to configure the behavior of the plugin:
 
 - **maxDelay**: The maximum duration after which we can actually abandon further retries.
 - **maxRetryAttempts**: The maximum number of retry attempts for a failed request. Default is 3 attempts.
@@ -73,6 +69,8 @@ The `AutoRetryOptions` class allows you to configure the behavior of the plugin:
 
 - **Automatic Retry**: Automatically retries failed API requests due to rate limits or server errors.
 - **Exponential Backoff**: Implements exponential backoff with a cap at one hour for retry attempts.
+- **Rate Limit Handling**: Respects Telegram's `retry_after` parameter for precise retry timing.
+- **Configurable**: Flexible options to control retry behavior and logging.
 
 ## Contributing
 
@@ -85,4 +83,3 @@ This project is licensed under the MIT License.
 ---
 
 If you find this plugin useful, please consider giving it a star on [GitHub](https://github.com/xooniverse/auto_retry) and reporting any issues you encounter.
-

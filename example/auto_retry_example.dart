@@ -9,12 +9,12 @@ void main(List<String> args) async {
   );
 
   // Take an instance of the Auto Retry, feel free to check the different options
-  const autoRetry = AutoRetry(
+  const autoRetry = AutoRetryPlugin(
     enableLogs: true,
   );
 
   // Attach the auto retry plugin to the Bot - that's it. You're all set.
-  bot.use(autoRetry);
+  bot.plugin(autoRetry);
 
   bot.command("start", (ctx) {
     // Just spam the Bot API Server (and hit some limits)
